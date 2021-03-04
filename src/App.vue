@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Welcome @toNext="toNext" v-show="currentStatus === 'welcome'" />
+    <Prepare @toNext="toNext" v-show="currentStatus === 'prepare'"/>
+    <Progress @toNext="toNext" v-show="currentStatus === 'progress'" />
+    <hr>
+    <p>{{currentStatus}}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Welcome from "./components/Welcome.vue";
+import Prepare from "./components/Prepare.vue";
+import Progress from "./components/Progress.vue";
+
+//const statuses = ['welcome','prepare','progress'];
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Welcome,
+    Prepare,
+    Progress,
+  },
+  data() {
+    return {  
+      currentStatus: 'welcome'
+      };
+  },
+  methods: {
+    toNext: function(page){
+      this.currentStatus = page
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./assets/css/reset.css";
+@import "./assets/css/style.css";
 </style>

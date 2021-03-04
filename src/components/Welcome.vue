@@ -1,14 +1,20 @@
 <template>
   <div class="container">
-    <h1></h1>
+    <h1>Welcome</h1>
+    <button @click="toNext">start</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Welcome',
   props: {
     msg: String
+  },
+  methods:{
+      toNext: function(){
+          this.$emit('toNext','prepare');
+      }
   }
 }
 </script>
