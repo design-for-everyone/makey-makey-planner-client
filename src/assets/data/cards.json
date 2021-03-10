@@ -1,0 +1,26 @@
+[
+    {
+        "id": "3F2504E0 4F89 11D3 9A 0C 03 05 E8 2C 33 01",
+        "activity": "opstaan",
+        "icon" : "bed.jpg",
+        "time": 2
+    },
+    {
+        "id": "3F2504E0 4F89 1234 9A 0C 03 05 F9 2C 33 01",
+        "activity": "ontbijt",
+        "icon": "breakfast.jpg",
+        "time": 2
+    },
+    {
+        "id": "38a52be4-9352-453e-af97-5c3b448652f0",
+        "activity": "douchen",
+        "icon": "shower.jpg",
+        "time": 1
+    },
+    {
+        "id": "ABCDEFG3 4F89 1234 9A 0C 03 05 F9 2C 33 01",
+        "activity": "bus naar school",
+        "icon": "schoolbus.jpg",
+        "time": 1
+    }
+]

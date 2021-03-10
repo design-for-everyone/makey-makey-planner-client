@@ -1,25 +1,33 @@
 <template>
   <div class="container">
-    <h1>Welcome</h1>
-    <button @click="toNext">start</button>
+    <h1 class="message">Het bord is momenteel niet in gebruik</h1>
+    <v-btn x-large color="primary" @click="toNext">maak nieuw bord</v-btn>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Welcome',
-  props: {
-    msg: String
+  name: "Welcome",
+  methods: {
+    toNext: function () {
+      document.documentElement.requestFullscreen();
+      this.$emit("toNext", "Prepare");
+    },
   },
-  methods:{
-      toNext: function(){
-          this.$emit('toNext','prepare');
-      }
-  }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.message {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 </style>

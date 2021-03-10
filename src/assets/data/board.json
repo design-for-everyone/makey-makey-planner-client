@@ -1,0 +1,32 @@
+[
+    {
+        "color": "orange",
+        "input": "space",
+        "activity": {},
+        "completed": false
+    },
+    {
+        "color": "yellow",
+        "input": "up",
+        "activity": {},
+        "completed": false
+    },
+    {
+        "color": "green",
+        "input": "right",
+        "activity": {},
+        "completed": false
+    },
+    {
+        "color": "lime",
+        "input": "down",
+        "activity": {},
+        "completed": false
+    },
+    {
+        "color": "red",
+        "input": "left",
+        "activity": {},
+        "completed": false
+    }
+]

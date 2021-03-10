@@ -1,19 +1,18 @@
 <template>
-  <div id="app">
-    <Welcome @toNext="toNext" v-show="currentStatus === 'welcome'" />
-    <Prepare @toNext="toNext" v-show="currentStatus === 'prepare'"/>
-    <Progress @toNext="toNext" v-show="currentStatus === 'progress'" />
-    <hr>
-    <p>{{currentStatus}}</p>
-  </div>
+  <v-app> 
+    <component :is="currentComponent" @toNext="toNext" :board="board"></component>
+  </v-app>
 </template>
 
 <script>
+
 import Welcome from "./components/Welcome.vue";
 import Prepare from "./components/Prepare.vue";
 import Progress from "./components/Progress.vue";
+import Finished from './components/Finished.vue';
 
-//const statuses = ['welcome','prepare','progress'];
+import board from "./assets/data/board.json";
+
 
 export default {
   name: "App",
@@ -21,17 +20,20 @@ export default {
     Welcome,
     Prepare,
     Progress,
+    Finished,
   },
   data() {
-    return {  
-      currentStatus: 'welcome'
-      };
+    return {
+      currentComponent: "Welcome",
+      board: board
+    };
   },
   methods: {
-    toNext: function(page){
-      this.currentStatus = page
+    toNext: function (page) {
+      console.log(page);
+      this.currentComponent = page;
     }
-  }
+  },
 };
 </script>
 

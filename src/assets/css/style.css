@@ -10,11 +10,13 @@ html {
 
 html,
 body,
-#app {
+#app,
+.container {
   height: 100%;
 }
 
 body{
     font-family: Lato, sans-serif;
+    font-weight: 300;
     margin: 1rem;
 }
