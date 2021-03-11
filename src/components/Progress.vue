@@ -43,12 +43,14 @@ export default {
   name: "Progress",
   props: {
     board: Array,
+    ip: String,
   },
   components: {
     Activity,
   },
   mounted() {
     // watch if an activity is checked
+    this.socket = io(`https://${this.ip}`);
     this.socket.on("message", (data) => {
       const input = data.substring(1, data.length - 1);
       if (input !== "release") {
@@ -56,29 +58,6 @@ export default {
         console.log(boardItem);
         boardItem.completed = true;
       }
-
-      // look for the activity on the board
-
-      /*       if (this.currentActivity === "") {
-        this.updateStatus("Gelieve eerst een activiteit te scannen");
-      } else {
-        const input = data.substring(1, data.length - 1);
-        if (input === "release") {
-          this.board.find(
-            (item) => item.input === this.currentBoardInput
-          ).activity = this.currentActivity;
-          this.updateStatus(
-            "Activiteit werd op bord geplaatst, scan volgende of druk op start"
-          );
-          this.currentActivity = "";
-          this.currentQrCode = "";
-        } else {
-          this.currentBoardInput = input;
-          this.updateStatus(
-            "Activiteit werd op bord geplaatst, laat los om te bevestigen"
-          );
-        }
-      } */
     });
 
     // calculate total time
@@ -100,7 +79,7 @@ export default {
   },
   data() {
     return {
-      socket: io("https://smartplanner.local"),
+      socket: {},
       activityIndex: 0,
       activityTime: 0,
       interval: {},

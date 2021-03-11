@@ -50,9 +50,11 @@ import activities from "../assets/data/cards.json";
 export default {
   name: "Prepare",
   props: {
-    board: Array
+    board: Array,
+    ip: String
   },
   mounted() {
+    this.socket = io(`https://${this.ip}`);
     this.socket.on("message", (data) => {
       if (this.currentActivity === '') {
         this.updateStatus("Gelieve eerst een activiteit te scannen");
@@ -82,7 +84,7 @@ export default {
   },
   data() {
     return {
-      socket: io("https://smartplanner.local"),
+      socket: {},
       currentQrCode: "",
       currentActivity: "",
       currentBoardInput: {},

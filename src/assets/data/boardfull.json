@@ -3,6 +3,7 @@
         "color": "green",
         "barWidth": 0,
         "input": "space",
+        "completed": false,
         "activity": {
             "id": "3F2504E0 4F89 11D3 9A 0C 03 05 E8 2C 33 01",
             "activity": "opstaan",
@@ -14,6 +15,7 @@
         "color": "red",
         "barWidth": 0,
         "input": "up",
+        "completed": false,
         "activity": {
             "id": "3F2504E0 4F89 1234 9A 0C 03 05 F9 2C 33 01",
             "activity": "ontbijt",
@@ -25,6 +27,7 @@
         "color": "blue",
         "barWidth": 0,
         "input": "right",
+        "completed": false,
         "activity": {
             "id": "38a52be4-9352-453e-af97-5c3b448652f0",
             "activity": "douchen",
@@ -36,6 +39,7 @@
         "color": "brown",
         "barWidth": 0,
         "input": "down",
+        "completed": false,
         "activity": {
             "id": "ABCDEFG3 4F89 1234 9A 0C 03 05 F9 2C 33 01",
             "activity": "bus naar school",
@@ -47,6 +51,7 @@
         "color": "orange",
         "barWidth": 0,
         "input": "left",
+        "completed": false,
         "activity": {
             "id": "38a52be4-9352-453e-af97-5c3b448652f0",
             "activity": "lezen",
